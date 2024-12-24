@@ -169,7 +169,7 @@ from torch.nn import CrossEntropyLoss, Sequential, MaxPool2d, Conv2d, Flatten, L
 # 下载、存储数据集
 dataset = torchvision.datasets.CIFAR10(root='./dataset', train=False, transform=torchvision.transforms.ToTensor(),
                                        download=True)
-dataloader = torch.utils.data.DataLoader(dataset=dataset, batch_size=1, shuffle=True, drop_last=True)
+dataloader = torch.utils.data.DataLoader(dataset=dataset, batch_size=8, shuffle=True, drop_last=True)
 
 
 # 卷积层
