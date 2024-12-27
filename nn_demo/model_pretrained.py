@@ -10,11 +10,9 @@ train_data=torchvision.datasets.CIFAR10(root='./dataset', train=True, download=T
 vgg16_true.classifier.add_module('add_linear',nn.Linear(1000, 10))
 print(vgg16_true)
 
-print(vgg16_false)
-
 # 修改现有层
-vgg16_false.classifier[6]=nn.Linear(4096, 10)
-print(vgg16_false)
+vgg16_true.classifier[6]=nn.Linear(4096, 10)
+print(vgg16_true)
 
 # 模型保存方式1: 模型的结构+参数
 torch.save(vgg16_false, 'vgg16_false1.pth')
